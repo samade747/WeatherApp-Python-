@@ -4,7 +4,7 @@ import requests
 app = FastAPI()
 
 # Replace with your OpenWeatherMap API key
-API_KEY = "your_api_key"
+API_KEY = "a19ac5ed42c436634a170333b3d18673"
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 @app.get("/weather/{city}")
