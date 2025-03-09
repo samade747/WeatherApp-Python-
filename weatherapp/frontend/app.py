@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
-import geocoder
+from geopy.geocoders import Nominatim
+import requests
 
 # FastAPI backend URL
 API_URL = "http://127.0.0.1:8000/weather/"
@@ -9,8 +10,8 @@ st.set_page_config(page_title="🌤️ Weather App", layout="wide")
 
 # Function to get user's location
 def get_location():
-    g = geocoder.ip('me')
-    return g.city if g.city else "Nairobi"
+    response = requests.get("https://ipinfo.io/json").json()
+    return response.get("city", "Nairobi")
 
 # UI Styling
 st.markdown(
