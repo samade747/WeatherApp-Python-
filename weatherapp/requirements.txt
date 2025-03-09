@@ -2,12 +2,3 @@ fastapi
 uvicorn
 streamlit
 requests
-geocoder
-streamlit
-requests
-geocoder
-fastapi
-uvicorn
-streamlit
-requests
-geopy
