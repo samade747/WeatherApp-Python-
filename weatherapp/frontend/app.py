@@ -10,8 +10,11 @@ st.set_page_config(page_title="🌤️ Weather App", layout="wide")
 
 # Function to get user's location
 def get_location():
-    response = requests.get("https://ipinfo.io/json").json()
-    return response.get("city", "Nairobi")
+    try:
+        response = requests.get("https://ipinfo.io/json").json()
+        return response.get("city", "Nairobi")  # Default to Nairobi if city not found
+    except:
+        return "Nairobi"  # Fallback in case of an error
 
 # UI Styling
 st.markdown(
